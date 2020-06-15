@@ -45,8 +45,8 @@ a {
     text-decoration: none
 }
 
-    a:hover {
-        font-size: 17px;
+a:hover {
+        font-size: bold;
         transition: all 500ms;
 
     }
