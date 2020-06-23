@@ -1,11 +1,21 @@
-body
-{
+:root {
+    --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
+    --color-darkblue: #1b1b32;
+}
+
+body {
     margin: 0;
     font-family: sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 15px;
-    background: white;
+    background: var(--color-darkblue);
+    background-image: url("https://i.imgur.com/B8Is1BV.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
+
+
 
 .container {
     width: 80%;
@@ -14,7 +24,7 @@ body
 
 header 
 {
-    background: #3E5DBC;
+    background: var(--color-darkblue-alpha);
 }
 
 header::after {
@@ -37,16 +47,32 @@ nav ul
 
 nav li {
     display: inline-block;
-    margin: 0 10px;
+    margin-left: 70px;
+    padding-top: 23px;
+    position: relative;
 }
 
-a {
+nav a {
     color: white;
-    text-decoration: none
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-a:hover {
-        font-weight: bold;
-        transition: all 500ms;
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        width: 0%;
+        transition: all ease-in-out 250ms;
+    }
 
+nav a:hover::before {
+    width: 100%;
+
+}
+nav a:hover {
+    color: #E0E0E0;
     }
