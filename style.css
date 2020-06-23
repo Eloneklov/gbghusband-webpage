@@ -1,3 +1,6 @@
+@import 
+url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
 :root {
     --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
     --color-darkblue: #1b1b32;
@@ -5,60 +8,77 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: sans-serif;
-    font-weight: 400;
     font-size: 15px;
-    background: var(--color-darkblue);
-    background-image: url("https://i.imgur.com/B8Is1BV.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
 
 }
 
-
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-header 
-{
-    background: var(--color-darkblue-alpha);
-}
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background: var(--color-darkblue);
+        background-image: linear-gradient( 115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7) ), url("https://i.imgur.com/B8Is1BV.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
 header::after {
     content: '';
-    display: table;
-    clear: both;
+    display: block;
 }
 
 nav {
-    float: right;
-    margin: 35px;
+    overflow: auto;
+    width: 100%;
+    background: var(--color-darkblue-alpha);
 }
 
-nav ul
-{
-   margin: 0;
-   padding: 0;
-   list-style: none;
-}
-
-nav li {
+li {
     display: inline-block;
-    margin-left: 70px;
-    padding-top: 23px;
+    margin-left: 30px;
+    padding-top: 10px;
     position: relative;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
+.text
+{
+   float: left;
 }
 
-    nav a::before {
+.logos {
+    float: right;
+    margin-right: 50px;
+}
+
+.text li a {
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    }
+
+.logos li a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+    .text a::before {
         content: '';
         display: block;
         height: 5px;
@@ -76,3 +96,14 @@ nav a:hover::before {
 nav a:hover {
     color: #E0E0E0;
     }
+
+h1 {
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-size: 36px;
+}
+
+.img-bandflower {
+    width: 300px;
+}
