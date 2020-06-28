@@ -14,20 +14,20 @@ body {
 
 }
 
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
-        background: var(--color-darkblue);
-        background-image: linear-gradient( 115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7) ), url("https://i.imgur.com/B8Is1BV.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: .3;
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: var(--color-darkblue);
+    background-image: linear-gradient( 115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7) ), url("https://i.imgur.com/B8Is1BV.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .3;
     }
 
 header::after {
@@ -41,21 +41,67 @@ nav {
     background: var(--color-darkblue-alpha);
 }
 
+ul {
+    display: inline-block;
+}
+
 li {
     display: inline-block;
-    margin-left: 30px;
-    padding-top: 10px;
     position: relative;
 }
 
-.text
-{
-   float: left;
+.logos {
+
+    margin-right: 50px;
+    float: right;
+    text-align: center;
+
+}
+.logos li{
+    text-decoration: none;
+    list-style: none;
+    float: right;
+    background: #fff;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    line-height: 40px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    color: #262626;
+    z-index: 1;
+    transition: .5s ease-in-out;
+    font-size: 20px;
 }
 
-.logos {
-    float: right;
-    margin-right: 50px;
+
+.logos li::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ccc;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: .3s ease-in-out;
+}
+
+.logos li::before {
+    transform: scale(1);
+}
+
+.text {
+    float: left;  
+}
+
+.text li {
+    text-decoration: none;
+    list-style: none;
+    margin: 10px;
 }
 
 .text li a {
@@ -63,38 +109,27 @@ li {
     color: #fff;
     font-weight: bold;
     letter-spacing: 1px;
-    text-align: center;
     padding: 10px;
     text-decoration: none;
     text-transform: uppercase;
     }
 
-.logos li a {
+.text a::before {
+    content: '';
     display: block;
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    text-align: center;
-}
-
-
-
-    .text a::before {
-        content: '';
-        display: block;
-        height: 5px;
-        background-color: white;
-        position: absolute;
-        top: 0;
-        width: 0%;
-        transition: all ease-in-out 250ms;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
     }
 
-nav a:hover::before {
+.text a:hover::before {
     width: 100%;
 
 }
-nav a:hover {
+.text a:hover {
     color: #E0E0E0;
     }
 
