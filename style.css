@@ -27,7 +27,7 @@ body::before {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: .3;
+    
     }
 
 header::after {
@@ -174,7 +174,7 @@ li {
     }
 
 h1 {
-    color: var(--color-darkblue-alpha);
+    color: #fff;
     text-align: center;
     padding: 50px;
     font-size: 36px;
