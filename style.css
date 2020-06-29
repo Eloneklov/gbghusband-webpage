@@ -184,8 +184,42 @@ h1 {
 
 
 
-.img-bandflower {
+ div .img-bandflower {
     width: 100%;
     height: 100%;
     opacity: .8;
+}
+
+.container {
+    width: 1242px;
+    margin: 10px;
+    overflow: auto;
+    background: #f2f2f2;
+    opacity: .8;
+}
+
+.photos {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 350px;
+}
+
+.photos img {
+    width: 100%;
+    height: auto;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+footer {
+    padding: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    background: var(--color-darkblue-alpha);
+    height: 87px;
 }
