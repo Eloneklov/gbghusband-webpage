@@ -14,7 +14,30 @@ upcomingSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 //Button listener
 
 nextBtn.addEventListener('click', () => {
-    upcomingSlide.style.transition = "transform 0.4 ease-in-out"
+    if (counter >= upcomingImages.length -1) return;
+    upcomingSlide.style.transition = "transform 0.4s ease-in-out"
     counter++;
     upcomingSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+});
+
+prevBtn.addEventListener('click', () => {
+    if (counter <= 0) return;
+    upcomingSlide.style.transition = "transform 0.4s ease-in-out"
+    counter--;
+    upcomingSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+});
+
+upcomingSlide.addEventListener('transitionend', () => {
+    if (upcomingImages[counter].id === 'lastClone') {
+        upcomingSlide.style.transition = "none";
+        counter = upcomingImages.length -2;
+        upcomingSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+    }
+    if (upcomingImages[counter].id === 'firstClone') {
+        upcomingSlide.style.transition = "none";
+        counter = upcomingImages.length - counter;
+        upcomingSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+    }
 });

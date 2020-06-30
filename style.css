@@ -6,6 +6,7 @@ url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
     --color-darkblue: #1b1b32;
 }
 
+
 body {
     margin: 0;
     padding: 0;
@@ -225,14 +226,44 @@ footer {
 }
 
 .upcoming {
-    width: 60%;
+    width: 100%;
     margin: auto;
     border: 5px solid black;
+    overflow: hidden;
+    position: relative;
+
 }
 
 .upcomingSlider {
     display: flex;
     width: 100%;
     height: 500px;
-
 }
+
+img {
+    min-width: 100%;
+    min-width: 100%;
+}
+
+#prevBtn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 5%;
+    font-size: 30px;
+    color: white;
+    opacity: .9;
+    cursor: pointer;
+}
+
+#nextBtn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    opacity: .9;
+    cursor: pointer;
+}
+
