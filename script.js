@@ -1,33 +1,50 @@
 const upcomingSlide = document.querySelector('.upcomingSlider');
 const upcomingImages = document.querySelectorAll('.upcomingSlider img');
-const tourBody = document.querySelector('.tour_body');
+
 
 //Buttons
 const prevBtn = document.querySelector('#prevBtn');
 const nextBtn = document.querySelector('#nextBtn');
 
 //Counter
-let counter = 1;
-const size = upcomingImages[0].clientWidth;
+let counter = 0;
+let prevIndex = 0;
+const size = upcomingImages[1].clientWidth;
 
 upcomingSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
 //Button listener
 
 nextBtn.addEventListener('click', () => {
-    if (counter >= upcomingImages.length -1) return;
-    upcomingSlide.style.transition = "transform 0.4s ease-in-out"
+    upcomingSlide.style.transition = "transform 0.7s ease-in-out"
+    upcomingImages[prevIndex].classList.add("hidden");
     counter++;
+    prevIndex = counter;
+    if (counter === 3) {
+        counter = 0;  
+    }
+    
+    upcomingImages[counter].classList.remove("hidden");
     upcomingSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    prevIndex = counter;
+       
 });
 
 prevBtn.addEventListener('click', () => {
-    if (counter <= 0) return;
-    upcomingSlide.style.transition = "transform 0.4s ease-in-out"
+    upcomingSlide.style.transition = "transform 0.7s ease-in-out"
+    upcomingImages[prevIndex].classList.add("hidden");
     counter--;
+    prevIndex = counter;
+    if (counter === -1) {
+        counter = upcomingImages.length - 1;
+    }
+    upcomingImages[counter].classList.remove("hidden");
     upcomingSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    prevIndex = counter;
+   
 });
 
+/* 
 upcomingSlide.addEventListener('transitionend', () => {
     if (upcomingImages[counter].id === 'lastClone') {
         upcomingSlide.style.transition = "none";
@@ -42,3 +59,4 @@ upcomingSlide.addEventListener('transitionend', () => {
 
     }
 });
+*/

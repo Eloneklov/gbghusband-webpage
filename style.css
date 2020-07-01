@@ -246,8 +246,7 @@ h1 {
     margin: 10px;
     overflow: auto;
     background: #f2f2f2;
-
-    //opacity: .8;
+    opacity: .8;
 }
 
 .photos {
@@ -332,7 +331,6 @@ footer {
 .upcoming {
     width: 70%;
     margin: auto;
-    // border: 5px solid black;
     overflow: hidden;
     position: relative;
 }
@@ -343,9 +341,13 @@ footer {
     height: 500px;
 }
 
+.hidden {
+    display: none;
+}
+
 .upcomingSlider img {
-    min-width: 100%;
-    min-width: 100%;
+
+  object-fit: contain;
 }
 
 #prevBtn {
