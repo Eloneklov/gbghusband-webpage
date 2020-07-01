@@ -1,5 +1,6 @@
 const upcomingSlide = document.querySelector('.upcomingSlider');
 const upcomingImages = document.querySelectorAll('.upcomingSlider img');
+const tourBody = document.querySelector('.tour_body');
 
 //Buttons
 const prevBtn = document.querySelector('#prevBtn');
