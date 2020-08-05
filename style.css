@@ -387,5 +387,29 @@ h1 {
     opacity: .9;
     cursor: pointer;
 }
-
+.box {
+    width: 200px;
+    margin: 100px auto;
+    background: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    right: 300px;
+    border-radius: 15px;
+}
+.sb1:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid white;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+    border-bottom: 10px solid transparent;
+    left: 19px;
+    bottom: -19px;
+}
 
