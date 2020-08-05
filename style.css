@@ -105,6 +105,10 @@ body {
     background-position: center;
 }
 
+header {
+    margin: 0 auto;
+}
+
 header::after {
     content: '';
     display: block;
@@ -114,6 +118,14 @@ nav {
     overflow: auto;
     width: 100%;
     background: var(--color-darkblue);
+}
+
+.logo {
+    float: left;
+    width: 7%;
+    background-color: transparent;
+    margin-top: 5.5px;
+    margin-left: 15px;
 }
 
 ul {
