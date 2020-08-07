@@ -3,6 +3,8 @@
 <head>
     <title>gbg-website</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="lightbox.min.css">
+    <script src="lightbox-plus-jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
@@ -12,6 +14,10 @@
     <!-- Navigation bar with different sections -->
     <header>
         <nav>
+
+            <a href="index.html">
+                <img src="https://i.imgur.com/Us0d7iZ.png" alt="logo" class="logo" />
+            </a>
             <ul class="text">
                 <li>
                     <a href="index.html">Hem</a>
@@ -42,28 +48,34 @@
 
     <div class="container_photo">
         <div class="photos">
-            <img src="https://i.imgur.com/FSAmR5S.jpg" />
-            <div class="desc">
+            <a href="https://i.imgur.com/FSAmR5S.jpg" data-lightbox="myAlbum" data-title="Harald (Clarence) & Samuel (Bruce)">
+                <img src="https://i.imgur.com/FSAmR5S.jpg" />
+            </a>
+                <div class="desc">
                 Gustav II Adolfs Bal 2019
             </div>
         </div>
 
         <div class="photos">
-            <img src="https://i.imgur.com/FSAmR5S.jpg" />
+            <a href="https://i.imgur.com/R4I97lq.jpg" data-lightbox="myAlbum" data-title="EEE - Stora salen">
+                <img src="https://i.imgur.com/R4I97lq.jpg" />
+            </a>
             <div class="desc">
                 Feb 20 EEE-dagarna
             </div>
         </div>
 
         <div class="photos">
-            <img src="https://i.imgur.com/FSAmR5S.jpg" />
+            <a href="https://i.imgur.com/csXyo1j.jpg" data-lightbox="myAlbum" data-title="Ludvig på keys">
+            <img src="https://i.imgur.com/csXyo1j.jpg" />
+            </a>
             <div class="desc">
                 Feb 14 Novischfest
             </div>
         </div>
 
         <div class="photos">
-            <img src="https://i.imgur.com/FSAmR5S.jpg" />
+            <img src="https://i.imgur.com/FZF46vh.jpg" />
             <div class="desc">
                 Dec 13 Julfest
             </div>
@@ -77,26 +89,25 @@
         <div class="photos">
             <img src="https://i.imgur.com/FSAmR5S.jpg" />
             <div class="desc">
-                Nov 9 Gustav II Adolfs bal
+                Gustav II Adolfs Bal 2018 
             </div>
         </div>
         <div class="photos">
             <img src="https://i.imgur.com/FSAmR5S.jpg" />
             <div class="desc">
-                Spelning lalala antal foton osv
+                1 Maj 2019
             </div>
         </div>
         <div class="photos">
             <img src="https://i.imgur.com/FSAmR5S.jpg" />
             <div class="desc">
-                Spelning lalala antal foton osv
+                Bröllop
             </div>
         </div>
         <div class="photos">
             <img src="https://i.imgur.com/FSAmR5S.jpg" />
             <div class="desc">
-                Spelning lalala antal foton osv
-            </div>
+                BTS            </div>
         </div>
     </div>
     <footer class="footer"></footer>
