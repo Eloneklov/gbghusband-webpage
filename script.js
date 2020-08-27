@@ -16,7 +16,7 @@ upcomingSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 //Button listener
 
 nextBtn.addEventListener('click', () => {
-    upcomingSlide.style.transition = "transform 0.4s ease-in-out"
+    upcomingSlide.style.transition = "transform: 0.4s ease-in-out";
     upcomingImages[prevIndex].classList.add("hidden");
     counter++;
     prevIndex = counter;
