@@ -1,124 +1,110 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
+  <head>
+    <meta charset="UTF-8" />
     <title>gbg-website</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="lightbox.min.css">
-    <script src="lightbox-plus-jquery.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-</head>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.6.2/viewer.min.css"
+      integrity="sha512-8ZhoOdKiZafVRcEa08KcidOK/B85ByNOaWUiBXRi8kZ3pWUWJsBuY8sGBK6hZPWZhH35uXtFyRH/5DLTo2u6EQ=="
+      crossorigin="anonymous"
+    />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vue@2.4.3/dist/vue.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.6.2/viewer.min.js"
+      integrity="sha512-VzJLwaOOYyQemqxRypvwosaCDSQzOGqmBFRrKuoOv7rF2DZPlTaamK1zadh7i2FRmmpdUPAE/VBkCwq2HKPSEQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/v-viewer@1.5.1/dist/v-viewer.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+  </head>
 
-
-<body class="photo_body">
+  <body class="photo_body">
     <!-- Navigation bar with different sections -->
-    <header>
+    <main>
+      <header>
         <nav>
-
-            <a href="index.html">
-                <img src="https://i.imgur.com/Us0d7iZ.png" alt="logo" class="logo" />
-            </a>
-            <ul class="text">
-                <li>
-                    <a href="index.html">Hem</a>
-                </li>
-                <li>
-                    <a href="tour.html">Spelningar</a>
-                </li>
-                <li>
-                    <a href="photo.html">Foton</a>
-                </li>
-                <li>
-                    <a href="video.html">Filmer</a>
-                </li>
-                <li>
-                    <a href="about.html">Om oss</a>
-                </li>
-                <li>
-                    <a href="contact.html">Kontakt</a>
-                </li>
-            </ul>
-            <ul class="logos">
-                <li><a href="https://www.facebook.com/search/top/?q=g%C3%B6teborgs%20nations%20husband&epa=SEARCH_BOX" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.instagram.com/gbghusband/?hl=sv" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-            </ul>
+          <a href="index.html">
+            <img
+              src="https://i.imgur.com/Us0d7iZ.png"
+              alt="logo"
+              class="logo"
+            />
+          </a>
+          <ul class="text">
+            <li>
+              <a href="index.html">Hem</a>
+            </li>
+            <li>
+              <a href="tour.html">Spelningar</a>
+            </li>
+            <li>
+              <a href="photo.html">Foton</a>
+            </li>
+            <li>
+              <a href="video.html">Filmer</a>
+            </li>
+            <li>
+              <a href="about.html">Om oss</a>
+            </li>
+            <li>
+              <a href="contact.html">Kontakt</a>
+            </li>
+          </ul>
+          <ul class="logos">
+            <li>
+              <a
+                href="https://www.facebook.com/search/top/?q=g%C3%B6teborgs%20nations%20husband&epa=SEARCH_BOX"
+                target="_blank"
+                ><i class="fa fa-facebook" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/gbghusband/?hl=sv"
+                target="_blank"
+                ><i class="fa fa-instagram" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            </li>
+          </ul>
         </nav>
-    </header>
+      </header>
 
-    <div class="container_photo">
-        <div class="photos">
-            <a href="https://i.imgur.com/FSAmR5S.jpg" data-lightbox="GAAlbum" data-title="Harald (Clarence) & Samuel (Bruce)">
-                <img src="https://i.imgur.com/FSAmR5S.jpg" />
-                <img src="https://i.imgur.com/jZOTdRt.jpg" /> 
-            </a>
-                <div class="desc">
-                Gustav II Adolfs Bal 2019
+      <div id="app">
+        <div class="gallery">
+          <div v-for="(album, index) in albums">
+            <img
+              :src="album.images[0]"
+              crossorigin="anonymous"
+              importance="high"
+              width="500"
+              class="album-cover"
+              @click="show(index)"
+            />
+            <p>{{album.title}}</p>
+            <div :class="[`album-${index}`]" v-viewer.static>
+              <img v-for="src in album.images" :src="src" :key="src" hidden />
             </div>
+          </div>
         </div>
-
-        <div class="photos">
-            <a href="https://i.imgur.com/R4I97lq.jpg" data-lightbox="EEEAlbum" data-title="EEE - Stora salen">
-                <img src="https://i.imgur.com/R4I97lq.jpg" />
-            </a>
-            <div class="desc">
-                Feb 20 EEE-dagarna
-            </div>
-        </div>
-
-        <div class="photos">
-            <a href="https://i.imgur.com/csXyo1j.jpg" data-lightbox="novischAlbum" data-title="Ludvig på keys">
-            <img src="https://i.imgur.com/csXyo1j.jpg" />
-            </a>
-            <div class="desc">
-                Feb 14 Novischfest
-            </div>
-        </div>
-
-        <div class="photos">
-            <img src="https://i.imgur.com/FZF46vh.jpg" />
-            <div class="desc">
-                Dec 13 Julfest
-            </div>
-        </div>
-        <div class="photos">
-            <img src="https://i.imgur.com/FSAmR5S.jpg" />
-            <div class="desc">
-                Nov 13 Arkad
-            </div>
-        </div>
-        <div class="photos">
-            <img src="https://i.imgur.com/FSAmR5S.jpg" />
-            <div class="desc">
-                Gustav II Adolfs Bal 2018 
-            </div>
-        </div>
-        <div class="photos">
-            <a href="https://i.imgur.com/I2MpIKN.jpg" data-lightbox="1MajAlbum">
-                <img src="../pics/1maj-pics/1maj.jpg" />
-                <img src="../pics/1maj-pics/1maj_start.jpg" />
-                <img src="../pics/1maj-pics/1maj_pic1.jpg" />
-                <img src="../pics/1maj-pics/1maj_pic2.jpg" />
-                <img src="../pics/1maj-pics/1maj_pic3.jpg" />
-                <img src="../pics/1maj-pics/1maj_pic4.jpg" />
-            </a>
-            <div class="desc">
-                1 Maj 2019
-            </div>
-        </div>
-        <div class="photos">
-            <img src="https://i.imgur.com/FSAmR5S.jpg" />
-            <div class="desc">
-                Bröllop
-            </div>
-        </div>
-        <div class="photos">
-            <img src="https://i.imgur.com/FSAmR5S.jpg" />
-            <div class="desc">
-                BTS            </div>
-        </div>
-    </div>
-    <footer class="footer"></footer>
-</body>
+      </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="vue.js" defer></script>
+  </body>
 </html>
-
